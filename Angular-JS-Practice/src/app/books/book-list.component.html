@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}        
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-m-2">Filter by:</div>
+            <div class="col-m-4">
+                <input type="text" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-m-6">
+            <h4>Filtered by:</h4>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table" *ngIf="books.length">
+            <thead>
+                <tr>
+                    <th>
+                        <button class="btn btn-primary">
+                            Show Image
+                        </button>
+                    </th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Release Date</th>
+                    <th>Length</th>
+                    <th>Goodreads Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of books">
+                    <td></td>
+                    <td>{{book.bookTitle}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.releaseDate}}</td>
+                    <td>{{book.length}}</td>
+                    <td>{{book.goodreadsRating}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
