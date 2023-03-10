@@ -6,13 +6,14 @@
         <div class="row">
             <div class="col-m-2">Filter by:</div>
             <div class="col-m-4">
-                <input type="text" />
+                <input type="text" 
+                [(ngModel)]='listFilter'/>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-m-6">
-            <h4>Filtered by:</h4>
+            <h4>Filtered by: {{listFilter}}</h4>
         </div>
     </div>
     <div class="table-responsive">
@@ -20,25 +21,38 @@
             <thead>
                 <tr>
                     <th>
-                        <button class="btn btn-primary">
-                            Show Image
+                        <button class="btn btn-primary" (click)='toggleImage()'>
+                            {{showImage ? 'Hide' : 'Show'}} Images
                         </button>
                     </th>
                     <th>Title</th>
                     <th>Author</th>
                     <th>Release Date</th>
-                    <th>Length</th>
                     <th>Goodreads Rating</th>
+                    <th>Length</th>
+                    <th>Pages Read</th>
+                    <!-- <th>Completion</th> -->
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let book of books">
-                    <td></td>
+                <tr *ngFor="let book of filteredBooks">
+                    <td><img *ngIf='showImage' 
+                        [src]='book.imageUrl'
+                        [title]='book.bookTitle'
+                        [style.width.px]='imageWidth'
+                        [style.margin.px]='imageMargin'></td>
                     <td>{{book.bookTitle}}</td>
                     <td>{{book.author}}</td>
-                    <td>{{book.releaseDate}}</td>
+                    <td>{{book.releaseDate | convertToSpaces:'-'}}</td>
+                    <td>
+                        <pm-star 
+                            [goodreadsRating]='book.goodreadsRating'
+                            (goodreadsRatingClicked)="ongoodreadsRatingClicked($event)">
+                        </pm-star>
+                    </td>
                     <td>{{book.length}}</td>
-                    <td>{{book.goodreadsRating}}</td>
+                    <td>{{book.pagesRead}}</td>
+                    <!-- <td>{{percentCalc()}}</td> -->
                 </tr>
             </tbody>
         </table>
