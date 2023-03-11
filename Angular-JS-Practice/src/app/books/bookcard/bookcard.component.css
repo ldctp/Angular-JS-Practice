@@ -1,6 +1,7 @@
 .bookcard{
     height: 100%;
     margin-top: 1rem;
+    margin-left: 10px;
 }
 section {
     margin-bottom: 0;
@@ -46,4 +47,13 @@ p {
 
 input {
     font-size: 1rem;
+    width: 20%;
+}
+
+button {
+    border: none;
+    font-size: 1rem;
+    margin-left: 3px;
+    background-color: #ffd9e0;
+    border-radius: 7px;
 }
