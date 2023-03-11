@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
-import { BookListComponent } from './books/book-list.component';
+import { BookListComponent } from './books/booklist/book-list.component';
+import { BookCardComponent } from './books/bookcard/bookcard.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
-import { StarComponent } from './shared/star.component';
+import { StarComponent } from './shared/stars/star.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
     ConvertToSpacesPipe,
-    StarComponent
+    StarComponent,
+    BookCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+<div class="bookcard">
+    <div class="generalbookinfo">
+        <div class="heading">
+            <span class="booktitle">{{title}} </span>
+            <span (click)='toggleDetail()' (click)='toggleProgress()' class="progressicon">🎯</span>
+        </div>
+    </div>
+    <section class="details">
+        <div *ngIf='showDetail'>
+            <span class="author">By {{author}} </span>
+            <span class="date">({{releaseDate | convertToSpaces:'-'}})</span>
+            <div class="space"></div>
+            <pm-star 
+                [goodreadsRating]='goodreadsRating' >
+            </pm-star>
+        </div>
+        <div class="progressinfo" *ngIf='showProgress'>
+            <p>Total pages: {{length}}</p>
+            <p>{{pagesRead}}</p>
+        </div>
+    </section>
+</div>

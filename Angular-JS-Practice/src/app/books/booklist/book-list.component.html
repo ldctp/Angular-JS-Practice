@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-m-4" *ngIf="books.length">
+        <div class="search">
+            <input *ngIf="showSearch" type="text" 
+            [(ngModel)]='listFilter'>
+            <span class="searchicon" (click)='toggleSearch()'>🔍</span>
+        </div>
+    </div>
+</div>
+<div class="cardContainer">
+    <div class="bookcard" *ngFor="let book of filteredBooks">
+        <img 
+            [src]='book.imageUrl'
+            [title]='book.bookTitle'>
+        <section class="bookinfo">
+            <pm-details
+                [title]="book.bookTitle"
+                [author]="book.author"
+                [releaseDate]="book.releaseDate"
+                [length]='book.length'
+                [pagesRead]='book.pagesRead'
+                [goodreadsRating]='book.goodreadsRating'
+            ></pm-details>
+        </section>
+    </div>
+</div>

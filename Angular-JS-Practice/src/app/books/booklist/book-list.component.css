@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300&family=Delius+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@700&display=swap');
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.bookcard {
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    margin: 1rem;
+    background-color: white;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+
+img {
+    height: 200px;
+    width: 30%;
+    margin: 1rem 0;
+}
+
+section {
+    margin-bottom: 0;
+    font-family: 'Bellota', cursive;
+    font-size: 1.5rem;
+    width: 60%
+}
+
+.searchicon{
+    font-size: 3rem;
+    margin-right: 1rem;
+}
+
+.search {
+    margin-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+input {
+    border: 2px solid white;
+    border-radius: 5px;
+    align-self: center;
+}
+
+input:active {
+    border: 2px solid pink;
+}
