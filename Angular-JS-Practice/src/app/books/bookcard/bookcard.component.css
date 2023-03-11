@@ -39,3 +39,11 @@ p {
     width: 100%;
     text-align: center;
 }
+
+.booktitle {
+    white-space: nowrap;
+}
+
+input {
+    font-size: 1rem;
+}

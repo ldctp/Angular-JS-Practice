@@ -1,0 +1,26 @@
+.crop {
+    overflow: hidden;
+    background-color: pink;
+    border-radius: 5px;
+}
+
+.fa-square {
+    color: pink;
+    border-radius: 5px;
+    
+}
+
+.progressBar{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.progressContainer {
+    background-color: #ffd9e0;
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 220px;
+    border-radius: 5px;
+}

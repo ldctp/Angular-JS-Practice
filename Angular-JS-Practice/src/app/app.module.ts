@@ -6,6 +6,7 @@ import { BookListComponent } from './books/booklist/book-list.component';
 import { BookCardComponent } from './books/bookcard/bookcard.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/stars/star.component';
+import { ProgressBarComponent } from './shared/progressbar/progressbar.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { StarComponent } from './shared/stars/star.component';
     BookListComponent,
     ConvertToSpacesPipe,
     StarComponent,
-    BookCardComponent
+    BookCardComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

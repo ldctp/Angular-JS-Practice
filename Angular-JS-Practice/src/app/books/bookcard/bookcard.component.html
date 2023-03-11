@@ -16,7 +16,13 @@
         </div>
         <div class="progressinfo" *ngIf='showProgress'>
             <p>Total pages: {{length}}</p>
-            <p>{{pagesRead}}</p>
+            <label for="pagesReadInput">Pages read:</label>
+            <input id="pagesReadInput" type="number" min="1" max="{{length}}"
+            [(ngModel)]='pagesReadInput'>
+            <p>Progress: {{percentage}}%</p>
+            <pm-progressbar
+                [progressAmount]="percentage"
+            ></pm-progressbar>
         </div>
     </section>
 </div>
