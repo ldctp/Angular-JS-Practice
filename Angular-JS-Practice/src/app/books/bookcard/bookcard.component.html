@@ -17,7 +17,7 @@
         <div class="progressinfo" *ngIf='showProgress'>
             <p>Total pages: {{length}}</p>
             <label for="pagesReadInput">Pages read: </label>
-            <input id="pagesReadInput" type="number" value={{pagesRead}} min="0">
+            <input id="pagesReadInput" type="number" value={{pagesRead}} min="0"
             [(ngModel)]='pagesRead'>
             <button type="button" (click)="percentageCalc(pagesRead)">🤔</button>
             <p>Progress: {{percentage}}%</p>
