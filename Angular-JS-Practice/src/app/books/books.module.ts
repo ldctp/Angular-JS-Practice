@@ -2,22 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BookListComponent } from './booklist/book-list.component';
 import { BookDetailComponent } from './bookdetail/book-detail.component';
-import { ConvertToSpacesPipe } from '../shared/convert-to-spaces.pipe';
-import { StarComponent } from '../shared/stars/star.component';
 import { BookCardComponent } from './bookcard/bookcard.component';
-import { ProgressBarComponent } from '../shared/progressbar/progressbar.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router'
 import { BookDetailGuard } from './bookdetail/book-detail.guard';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
         BookListComponent,
         BookDetailComponent,
-        ConvertToSpacesPipe,
-        StarComponent,
         BookCardComponent,
-        ProgressBarComponent
     ],
     imports: [
         CommonModule,
@@ -27,7 +22,8 @@ import { BookDetailGuard } from './bookdetail/book-detail.guard';
             { path: 'books/:id',
               canActivate: [ BookDetailGuard], 
               component: BookDetailComponent },
-        ])
+        ]),
+        SharedModule
     ]
 })
 export class BooksModule { }
