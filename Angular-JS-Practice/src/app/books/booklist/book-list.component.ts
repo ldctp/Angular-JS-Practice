@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IBook } from '../IBook';
 import {} from '../../app.module'
 import { BookService } from '../book.service';
+import { Subscription } from 'rxjs';
 
 @Component({
-    selector: 'pm-books',
     templateUrl: './book-list.component.html',
     styleUrls: ['../app.component.css', './book-list.component.css']
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent implements OnInit, OnDestroy {
     pageTitle: string = 'Book List';
     showSearch: boolean = false;
+    errorMessage: string = '';
+    sub!: Subscription;
 
     constructor(private bookService: BookService) {}
     
@@ -33,8 +35,18 @@ export class BookListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.books = this.bookService.getBooks();
-        this.filteredBooks = this.books;
+        this.sub = this.bookService.getBooks().subscribe({
+            next: books => {
+                this.books = books;
+                this.filteredBooks = this.books;
+            },
+            error: err => this.errorMessage = err
+        });
+        
+    }
+
+    ngOnDestroy() {
+        this.sub.unsubscribe();
     }
 
     toggleSearch(): void{

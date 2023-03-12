@@ -1,4 +1,10 @@
 <div class="page">
   <h1 class="title">📖 {{pageTitle}} 📖</h1>
-  <pm-books></pm-books>
+  <ul class="nav navbar-nav">
+    <li><a [routerLink]="['/welcome']">🏠</a></li>
+    <li><a [routerLink]="['/books']">📚</a></li>
+  </ul>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>

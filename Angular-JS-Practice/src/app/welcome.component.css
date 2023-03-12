@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.welcome {
+    font-family: 'Pacifico', cursive;
+    font-size: 10rem;
+    text-align: center;
+    width: 100vw;
+    margin-bottom: 0;
+}
+
+.wave {
+    width: 100vw;
+    text-align: center;
+    font-size: 13rem;
+    display: inline-block;
+}
+
+.wave:hover {
+    animation: rotate-hand .5s linear 3;
+    -webkit-animation: rotate-hand .5s linear 3;
+  }
+  
+  @keyframes rotate-hand {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    75% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+  }

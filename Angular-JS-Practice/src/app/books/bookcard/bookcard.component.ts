@@ -16,6 +16,7 @@ export class BookCardComponent{
     @Input() length: number = 1;
     @Input() pagesRead: number = 1;
     @Input() goodreadsRating: number = 0;
+    @Input() bookId: number = 0;
 
     toggleDetail(): void{
         this.showDetail = !this.showDetail;

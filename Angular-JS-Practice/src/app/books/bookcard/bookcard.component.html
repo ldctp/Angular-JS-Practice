@@ -1,7 +1,7 @@
 <div class="bookcard">
     <div class="generalbookinfo">
         <div class="heading">
-            <span class="booktitle">{{title}} </span>
+            <a [routerLink]="['/books', bookId]"><span class="booktitle">{{title}} </span></a>
             <span (click)='toggleDetail()' (click)='toggleProgress()' class="progressicon">🎯</span>
         </div>
     </div>
